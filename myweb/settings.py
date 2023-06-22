@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-8+n-n^*-h%@s%6&4t02-g*_f-23=mnv9%_4yik866hdojkyffu
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['xtmairi.pythonanywhere.com']
 
 
 # Application definition
@@ -55,14 +55,14 @@ ROOT_URLCONF = 'myweb.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': [BASE_DIR / 'static/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
+                'django.contrib.essages.context_processors.messages',
             ],
         },
     },
