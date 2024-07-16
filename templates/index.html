@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% include 'nav.html' %}
+  {% include 'hero.html' %}
+ {% include 'skills.html' %}
+  {% include 'lates.html' %}
+  {% include 'contact.html' %}
+  {% include 'footer.html' %} 
+  
+  <script>
+    // $(document).ready(function () {
+      function pushNotify() {
+  new Notify({
+    title: 'Message Submitted.',
+    text: "we'll try to reach you soon.",
+  })
+}
+      document.addEventListener("event", function() {
+        pushNotify()
+})
+// })
+
+  </script>
+  {% endblock content %}
+
+

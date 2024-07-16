@@ -12,7 +12,7 @@ class projectsphoto(models.Model):
 class projectscount(models.Model):
     total = models.IntegerField()
     complex = models.IntegerField()
-    experience = models.IntegerField()
+    experience = models.CharField(max_length=20)
     
 
 

@@ -5,6 +5,7 @@ from django.core.cache import cache
 from django.shortcuts import render
 from django.dispatch import receiver
 from django.core.cache import cache
+from django_htmx.http import trigger_client_event
 from django.db.models.signals import post_save
 
 @receiver(post_save, sender=(projectsphoto))
@@ -45,7 +46,8 @@ def index(request):
         email = request.POST.get('email')
         name = request.POST.get('name')
         message = request.POST.get('message')  
-        contact.objects.create(email=email, name=name, message=message)
-        return HttpResponse("Your message received. We'll contact you soon.")
+        contact.objects.create(email=email, name=name, messafe=message)
+        response = HttpResponse("")
+        return trigger_client_event(response,'event')
 
     return render(request, 'index.html', {'nav': nav, 'photo': photo, 'count': count})

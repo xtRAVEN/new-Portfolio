@@ -25,7 +25,8 @@ SECRET_KEY = 'django-insecure-8+n-n^*-h%@s%6&4t02-g*_f-23=mnv9%_4yik866hdojkyffu
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['xtmairi.pythonanywhere.com']
+ALLOWED_HOSTS = ['xtraven.pythonanywhere.com']
+# ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -35,9 +36,10 @@ INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
-    'django.contrib.messages',
+     'django.contrib.messages',  # Ensure this is included
     'django.contrib.staticfiles',
     'app',
+    "django_htmx",
 ]
 
 MIDDLEWARE = [
@@ -55,14 +57,14 @@ ROOT_URLCONF = 'myweb.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'static/templates'],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
-                'django.contrib.essages.context_processors.messages',
+                'django.contrib.messages.context_processors.messages',
             ],
         },
     },
@@ -116,14 +118,14 @@ import os
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
-MEDIA_URL = 'media/'
-MEDIA_ROOT = os.path.join(BASE_DIR , 'media')
-# STATIC_ROOT = os.path.join(BASE_DIR , 'static')
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static')
+  BASE_DIR / "static",
 ]
 
 # Default primary key field type
