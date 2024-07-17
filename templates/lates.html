@@ -9,12 +9,13 @@
         <div class="relative h-64 overflow-hidden rounded-lg md:h-[44rem]">
             <!-- Item 1 -->
             {% for phot in photo %}
-              
-            
-            <div class="duration-[1.5s] ease-in-out " data-carousel-item>
-                <img  src="{{ phot.image.url }}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            <div class="duration-[1.5s] ease-in-out" data-carousel-item>
+                <a href="https://imgur.com/DlopPFr">
+                    <img src="{{ phot.image }}" loading="lazy" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" title="source: imgur.com" />
+                </a>
             </div>
-            {% endfor %}
+        {% endfor %}
+        
         </div>
         <!-- Slider indicators -->
         <div class="absolute z-30  flex space-x-3 -translate-x-1/2 md:bottom-5 left-1/2">
